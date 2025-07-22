@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   buyPremiumBtn.addEventListener("click", () => {
-    window.location.href = "https://link.badal.lena";
+    window.location.href = "payment.html";
   });
 
   const fetchLinks = async () => {
