@@ -1,4 +1,4 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js";
 
 const supabase = createClient(
   "https://nlsfpgzpesdbumlfutqd.supabase.co",
@@ -10,13 +10,11 @@ const loader = document.getElementById("loader");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
+  const email = document.getElementById("forgot-email").value;
   loader.classList.remove("hidden");
 
-  const email = document.getElementById("forgot-email").value;
-
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${window.location.origin}/reset-password.html`,
+    redirectTo: "https://linkpitara.netlify.app/reset-password.html",
   });
 
   loader.classList.add("hidden");
@@ -24,6 +22,7 @@ form.addEventListener("submit", async (e) => {
   if (error) {
     alert("❌ " + error.message);
   } else {
-    alert("📨 Password reset email sent! Check your inbox.");
+    alert("📩 Reset email sent! Please check your inbox.");
+    form.reset();
   }
 });
