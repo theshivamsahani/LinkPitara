@@ -6,6 +6,48 @@
   <meta name="description" content="Link Pitara is a smart URL shortener that supports custom links for premium users.">
   <title>Link Pitara - Smart URL Shortener</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .footer-buttons a {
+      display: inline-block;
+      margin: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(135deg, #0077ff, #00c2ff);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 119, 255, 0.2);
+    }
+
+    .footer-buttons a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 119, 255, 0.4);
+    }
+
+    .buy-premium {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, #ff6a00, #ff8c00);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .buy-premium:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -26,6 +68,11 @@
     <div class="button-group">
       <a href="login.html" class="btn">Login</a>
       <a href="signup.html" class="btn">Sign Up</a>
+    </div>
+
+    <!-- Buy premium button -->
+    <div style="text-align: center;">
+      <a class="buy-premium" href="signup.html">🔥 Buy Premium</a>
     </div>
 
     <!-- Features -->
@@ -68,14 +115,19 @@
 
     <p class="footer-note">⚡ Buy Premium after login from the dashboard.</p>
 
-    <footer>
-      <p><a href="about.html">About</a> • <a href="privacy.html">Privacy</a> • <a href="contact.html">Contact</a></p>
+    <!-- Footer buttons -->
+    <div class="footer-buttons" style="text-align:center;">
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 40px; text-align: center; font-size: 0.95rem; color: #666;">
+      Made with ❤️ by <strong>Shivam</strong> • © 2025 Link Pitara
     </footer>
   </div>
 
   <script type="module" src="js/index.js"></script>
-<footer style="margin-top: 40px; text-align: center; font-size: 0.95rem; color: #666;">
-  Made with ❤️ by <strong>Shivam</strong> • © 2025 Link Pitara
-</footer>
 </body>
 </html>
