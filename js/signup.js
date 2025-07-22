@@ -7,22 +7,25 @@ const supabase = createClient(
 
 document.getElementById("signup-form").addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  const email = document.getElementById("signup-email").value;
+  const password = document.getElementById("signup-password").value;
   const loader = document.getElementById("loader");
+
   loader.classList.remove("hidden");
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-
-  const { error } = await supabase.auth.signUp({ email, password });
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: "https://linkpitara.netlify.app/email-confirmed.html" // ✅ correct redirect page
+    }
+  });
 
   loader.classList.add("hidden");
 
   if (error) {
-    if (error.message.toLowerCase().includes("user already registered")) {
-      alert("⚠️ User already exists. Please login.");
-    } else {
-      alert("❌ Signup failed: " + error.message);
-    }
+    alert("❌ " + error.message);
   } else {
     alert("✅ Signup successful. Please check your email to confirm.");
     window.location.href = "login.html";
