@@ -1,4 +1,4 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://esm.sh/@supabase/supabase-js";
 
 const supabase = createClient(
   "https://nlsfpgzpesdbumlfutqd.supabase.co",
@@ -10,11 +10,11 @@ const loader = document.getElementById("loader");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  loader.classList.remove("hidden");
-
   const newPassword = document.getElementById("new-password").value;
 
-  const { data, error } = await supabase.auth.updateUser({
+  loader.classList.remove("hidden");
+
+  const { error } = await supabase.auth.updateUser({
     password: newPassword,
   });
 
@@ -23,7 +23,7 @@ form.addEventListener("submit", async (e) => {
   if (error) {
     alert("❌ " + error.message);
   } else {
-    alert("✅ Password updated. You can now log in.");
+    alert("✅ Password updated successfully!");
     window.location.href = "login.html";
   }
 });
