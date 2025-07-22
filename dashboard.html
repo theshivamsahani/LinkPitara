@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Link Pitara - Manage your shortened URLs">
+  <title>Link Pitara | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">📋 Dashboard</h1>
+    <p id="email" class="email-display"></p>
+    <p id="status" class="status-text"></p>
+    <p id="expiry" class="expiry-text"></p>
+
+    <!-- Shorten URL Form -->
+    <div class="shorten-box">
+      <input type="url" id="long-url" placeholder="Enter long URL" required />
+      <div id="custom-link-box" class="hidden">
+        <input type="text" id="custom-alias" placeholder="Custom short link (premium only)" />
+      </div>
+      <button id="shorten-btn">Shorten</button>
+    </div>
+
+    <!-- Shortened Output -->
+    <div id="short-link-result" class="short-link-result hidden">
+      <input type="text" id="short-link-output" readonly />
+      <button id="copy-btn">Copy</button>
+    </div>
+
+    <!-- Buy Premium -->
+    <div id="premium-section">
+      <p>🚀 Upgrade to premium to use custom short links!</p>
+      <button id="buy-premium">Buy Premium (₹49)</button>
+    </div>
+
+    <!-- Links Table -->
+    <div class="link-table-box">
+      <h2>Your Short Links</h2>
+      <div id="loading" class="loader hidden"></div>
+      <table class="link-table">
+        <thead>
+          <tr>
+            <th>Short Link</th>
+            <th>Original URL</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="links-body">
+          <!-- Populated via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <button id="logout" class="logout-btn">Logout</button>
+  </div>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
