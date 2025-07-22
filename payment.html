@@ -10,8 +10,8 @@
       font-family: "Segoe UI", sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8faff;
-      color: #222;
+      background: #f9fafc;
+      color: #333;
     }
 
     .container {
@@ -24,32 +24,27 @@
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #0a0a0a;
+      color: #111;
     }
 
     .tagline {
       text-align: center;
       font-size: 1.1rem;
       margin-bottom: 2rem;
-      color: #555;
+      color: #666;
     }
 
     .card {
       background: #fff;
       padding: 2rem;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
       margin-bottom: 2rem;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
     }
 
     .card h2 {
       margin-top: 0;
-      color: #111;
+      color: #222;
     }
 
     .card ul {
@@ -58,97 +53,99 @@
 
     .card ul li {
       margin: 0.6rem 0;
-      font-size: 1rem;
     }
 
     .payment-info {
-      background: #eef4ff;
-      padding: 1.2rem 1.5rem;
+      background: #f1f5ff;
+      padding: 1rem 1.5rem;
       border-left: 5px solid #0077ff;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 1rem;
-      margin-top: 1rem;
     }
 
-    .show-qr-btn {
+    .payment-link,
+    .contact-btn,
+    .home-btn,
+    .close-btn,
+    button {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #0077ff;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
+      padding: 0.75rem 1.5rem;
       border: none;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .show-qr-btn:hover {
+    .payment-link {
+      margin-top: 1rem;
+      background-color: #0077ff;
+      color: #fff;
+    }
+
+    .payment-link:hover {
       background-color: #005fd0;
     }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-    }
-
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      max-height: 400px;
-      margin-top: 1rem;
-      border-radius: 8px;
-    }
-
-    .close-btn {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: #ff4d4f;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .close-btn:hover {
-      background: #e0393c;
-    }
-
     .contact-btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
       background: linear-gradient(135deg, #0077ff, #00c2ff);
       color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 8px;
       box-shadow: 0 5px 15px rgba(0, 119, 255, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 1rem;
     }
 
     .contact-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(0, 119, 255, 0.5);
+    }
+
+    .home-btn {
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
+      color: white;
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    }
+
+    .home-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.5);
+    }
+
+    /* QR Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .close-btn {
+      background-color: #e53935;
+      color: white;
+    }
+
+    .close-btn:hover {
+      background-color: #c62828;
     }
 
     footer {
@@ -160,21 +157,18 @@
 
     @media (max-width: 600px) {
       .container {
-        padding: 1rem;
+        padding: 1.2rem;
       }
 
       h1 {
         font-size: 2rem;
-      }
-
-      .card {
-        padding: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <a href="index.html" class="home-btn">🏠 Go to Home</a>
     <h1>Upgrade to Premium</h1>
     <p class="tagline">Unlock advanced features like custom short links and more.</p>
 
@@ -183,8 +177,8 @@
       <ul>
         <li>🔗 Create custom short URLs</li>
         <li>📊 Access your dashboard & link statistics</li>
-        <li>🛡️ Priority support and badge</li>
-        <li>💡 Valid for 6 months only ₹99</li>
+        <li>🛡️ Better support and premium badge</li>
+        <li>💡 Valid for 6 months — Only ₹99</li>
       </ul>
     </div>
 
@@ -194,31 +188,33 @@
         Send ₹99 to UPI ID: <strong>thedevilking@axl</strong><br/>
         Or scan the QR code below.
         <br/><br/>
-        <button class="show-qr-btn" onclick="document.getElementById('qrModal').style.display='flex'">Show QR</button>
+        <!-- QR Popup Trigger -->
+        <button onclick="document.getElementById('qrModal').style.display='block'">Show QR</button>
 
+        <!-- QR Modal -->
         <div id="qrModal" class="modal">
           <div class="modal-content">
             <h2>Scan the QR</h2>
             <img src="img/QR.png" alt="QR Code" />
-            <br/>
+            <br>
             <button class="close-btn" onclick="document.getElementById('qrModal').style.display='none'">Close</button>
           </div>
         </div>
 
-        <p style="margin-top: 1rem;">
-          After payment, send the screenshot and your email to:  
-          <strong>theshivamsahani@gmail.com</strong>
-        </p>
-
-        <p>Your premium access will be activated within 12 hours. <br/> If you have any issues, feel free to reach out.</p>
-
+        <br/><br/>
+        After payment, send the screenshot and your email to:  
+        <strong>theshivamsahani@gmail.com</strong>  
+        <br/><br/>
+        Your premium access will be activated within 12 hours.
+        <br/>
+        If you face any issue, feel free to:
         <a href="contact.html" class="contact-btn">Contact Me</a>
       </div>
     </div>
-  </div>
 
-  <footer>
-    Made with ❤️ by <strong>Shivam</strong> • © 2025 Link Pitara
-  </footer>
+    <footer>
+      Made with ❤️ by <strong>Shivam</strong> • © 2025 Link Pitara
+    </footer>
+  </div>
 </body>
 </html>
